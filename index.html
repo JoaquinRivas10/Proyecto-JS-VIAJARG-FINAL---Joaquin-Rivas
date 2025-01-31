@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIAJARG administrador | Control de ventas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Shadows+Into+Light+Two&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="contenedor">    
+        <div class="contenedorTitulo">
+            <h1>VIAJARG</h1>
+        </div>
+        <div class="contenedorFormulario"> 
+            <form id="formularioReserva">
+                <h2>Reserva tu Viaje</h2>
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
+                <label for="apellido">Apellido</label>
+                <input type="text" id="apellido" name="apellido" placeholder="Ingresa tu apellido" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Ingresa tu email" required>
+                <label for="viajeros">Cantidad de viajeros</label>
+                <input type="number" id="cantidadViajeros" name="cantidadViajeros" min="1" placeholder="Cantidad de viajeros" required>
+                <label for="ida">Fecha de ida</label>
+                <input type="date" id="fechaIda" name="fechaIda" required>
+                <label for="vuelta">Fecha de vuelta</label>
+                <input type="date" id="fechaVuelta" name="fechaVuelta" required>
+                <label for="destino">Destino</label>
+                <select id="destino" name="destino" required>
+                    <option value="" disabled selected>Selecciona un destino</option>
+                </select>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+
+        <div id="spinner" class="spinner oculto"></div>
+
+        <div class="contenedorTablaReservas">    
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Email</th>
+                        <th>Destino</th>
+                        <th>Cantidad de pasajeros</th>
+                        <th>Fecha de compra</th>
+                        <th>Fecha de ida</th>
+                        <th>Fecha de vuelta</th>
+                        <th>Costo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="filtros">
+                        <td><input class="filtroEstilo" type="text" placeholder="Nombre" id="filtroNombre"></td>
+                        <td><input class="filtroEstilo" type="text" placeholder="Apellido" id="filtroApellido"></td>
+                        <td><input class="filtroEstilo" type="text" placeholder="Email" id="filtroEmail"></td>
+                        <td><input class="filtroEstilo" type="text" placeholder="Destino" id="filtroDestino"></td>
+                        <td><input class="filtroEstilo" type="number" placeholder="Pasajeros" id="filtroCantidadPasajeros"></td>
+                        <td><input class="filtroEstilo" type="date" placeholder="Fecha Reserva" id="filtroFechaReserva"></td>
+                        <td><input class="filtroEstilo" type="date" placeholder="Fecha Ida" id="filtroFechaIda"></td>
+                        <td><input class="filtroEstilo" type="date" placeholder="Fecha Vuelta" id="filtroFechaVuelta"></td>
+                        <td><input class="filtroEstilo" type="number" placeholder="Costo Máximo" id="filtroCosto"></td>
+                    </tr>
+                </tbody>
+                <tbody id="tablaReservas">
+                </tbody>        
+            </table>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.5.0/build/global/luxon.min.js"></script>
+    <script src="./scripts/constantes.js"></script>
+    <script src="./scripts/Usuario.js"></script>
+    <script src="./scripts/Reserva.js"></script>
+    <script src="./scripts/utilidades.js"></script>
+    <script src="./scripts/main.js"></script>
+</body>
+</html>
